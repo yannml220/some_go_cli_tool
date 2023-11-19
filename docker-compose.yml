@@ -1,0 +1,15 @@
+version : "3.8"
+services :
+  task-cli-tool-db:
+    image: mongo
+    container_name: task-cli-tool-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: yann
+      MONGO_INITDB_ROOT_PASSWORD: yann
+    ports:
+      - 27017:27017
+    volumes :
+      - task-cli-tool-db_data:/data/db
+volumes :
+  task-cli-tool-db_data :
+    driver : local
